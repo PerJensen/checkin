@@ -1,0 +1,85 @@
+/*
+ *
+ * Check In CSS
+ *
+ * @author Per Jensen
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
+ * @copyright Copyright (c) 2019, Per Jensen
+ *
+ */
+
+ /* ***************************************
+ 	MISC
+ *****************************************/
+.checkin-photo {
+    text-align: center;
+    margin: 0 0 1rem;
+	line-height: 1;
+}
+.checkin-field {
+    border: 1px solid #e6e6ea;
+    padding: 1rem;
+	margin: 0 0 1rem;
+}
+.checkin-field span {
+    padding: 0;
+}
+.checkin-field .elgg-output {
+    padding: 0;
+	margin: 0;
+}
+/* Map display */
+#map-canvas {
+	width: 100%;
+	height: 300px;
+}
+#site-map-canvas {
+	height: 600px;
+	margin: 1rem 0;
+}
+#infowindow-content {
+	color: #2d3047;
+    background: #FFF;
+    font-size: 1rem;
+	padding: 1rem;
+}
+.gm-style .gm-style-iw-c {
+    border-radius: 3px;
+	background-color: #FFF;
+}
+/* end map */
+.checkin-location-field {
+    flex-direction: row;	
+}
+.checkin-location-field .elgg-icon {
+    margin-right: .5rem;
+	color: #E34B38;
+}
+.elgg-page-checkin .elgg-gallery {
+	margin: 0 -.5rem;
+}
+.elgg-page-checkin .elgg-gallery > li {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex: 1 0 26%;
+	padding: 1rem .5rem .5rem .5rem;
+}
+.elgg-page-checkin .file-gallery-item {
+	width: auto !important;
+}
+/* remove default fileexists warning */
+.elgg-page-checkin .elgg-field-input .elgg-state-warning {
+	display: none;
+}
+/* ***************************************
+	RESPONSIVE
+*****************************************/
+@media screen and (max-width: 50rem) {
+	.elgg-page-checkin .elgg-gallery > li {
+		flex: 1 0 34%;
+	}
+	.pac-container .pac-item {
+		font-size: 14px;
+	}
+}
