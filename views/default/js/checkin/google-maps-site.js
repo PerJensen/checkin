@@ -6,47 +6,43 @@
 
 define(function(require) {
 	
-	// still to do: add clustering, add user icon/name to infowindows
+	// still to do: add user icon/name to infowindows
 
 	var elgg = require('elgg');	
+	require('markerclusterer');
 	//require('google_places_library');
 
 	var map;
 	var locations = getalldata;
 
 	function initSiteMap() {
-
+		
 		var infowindow = new google.maps.InfoWindow({maxWidth: 300});
 		var bounds = new google.maps.LatLngBounds();
-
+		
 		var myLatLng = new google.maps.LatLng(57.053677, 9.923551);
 		var mapOptions = {
-			maxZoom: 14,
+			zoom: 14,
 			center: myLatLng,
 		}
 		map = new google.maps.Map(document.getElementById('site-map-canvas'), mapOptions);
 
-		function placeMarker(loc) {
-			var latlng = new google.maps.LatLng(loc[1], loc[2]);
+        var markers = locations.map(function(location, i) {
+			var latlng = new google.maps.LatLng(location[1], location[2]);
+			bounds.extend(latlng);
 			var marker = new google.maps.Marker({
-				position: latlng,
-				map: map
+				position: latlng
 			});
-			
-			google.maps.event.addListener(marker, 'click', function(){
-				infowindow.close();
-				infowindow.setContent('<div id="infowindow-content">' + loc[0] + '</div>');
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent('<div id="infowindow-content">' + location[0] + '</div>');
 				infowindow.open(map, marker);
 			});
-			
-			bounds.extend(marker.getPosition());
-			map.fitBounds(bounds);
-		}
-  
-		for (var i = 0; i < locations.length; i++) {
-			placeMarker(locations[i]);
-		}
+			return marker;
+        });
+		map.fitBounds(bounds);
 		
+		var markerCluster = new MarkerClusterer(map, markers, {imagePath: elgg.get_simplecache_url('checkin/graphics/icons/m')});		
+	
 	}
 	google.maps.event.addDomListener(window, "load", initSiteMap);
 	
