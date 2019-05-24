@@ -41,7 +41,10 @@
 	color: #2d3047;
     background: #FFF;
     font-size: 1rem;
-	padding: 1rem;
+	padding: .5rem;
+}
+#infowindow-content .elgg-content {
+    margin: .5rem 0;
 }
 .gm-style .gm-style-iw-c {
     border-radius: 3px;

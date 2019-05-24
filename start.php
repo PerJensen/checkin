@@ -45,14 +45,7 @@ function checkin_init() {
 	// hack to load google libraries with async defer (checkin/google-api)	
 	elgg_extend_view('page/elements/foot', 'checkin/google-api');
 	
-//	get google libraries
-//	does not work on mobile devices without async defer
-//	elgg_define_js('google_places_library', [
-//		'src' => elgg_http_add_url_query_elements('https://maps.googleapis.com/maps/api/js', [
-//			'key' => elgg_get_plugin_setting('google_api_key', 'checkin'),
-//			'libraries' => 'places',
-//		]),
-//	]);
+	elgg_register_ajax_view('checkin/infowindow');
 	
 	// menus
 	elgg_register_menu_item('site', [
@@ -71,7 +64,7 @@ function checkin_init() {
 		'priority' => 1200,
 	]);		
 }
-
+ 
 /**
  * Set body tag for checkin context
  *

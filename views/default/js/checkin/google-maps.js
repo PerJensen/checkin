@@ -7,7 +7,6 @@
 define(function(require) {
 
 	var elgg = require('elgg');	
-	//require('google_places_library');
 
 	var checkinmap;
 	var data = getlatandlng;

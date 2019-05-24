@@ -19,7 +19,11 @@ $results = elgg_get_entities([
 
 if ($results) {
 	foreach ($results as $key => $value) {
-		$location[$key] = [$value->location, $value->latitude, $value->longitude];
+		$location[$key] = [
+			$value->latitude, 
+			$value->longitude, 
+			$value->guid
+		];
 	}
 }
 

@@ -6,12 +6,11 @@
 
 define(function(require) {
 	
-	// still to do: add user icon/name to infowindows
-
 	var elgg = require('elgg');	
 	require('markerclusterer');
-	//require('google_places_library');
-
+	var Ajax = require('elgg/Ajax');
+	var ajax = new Ajax();
+	
 	var map;
 	var locations = getalldata;
 
@@ -28,14 +27,22 @@ define(function(require) {
 		map = new google.maps.Map(document.getElementById('site-map-canvas'), mapOptions);
 
         var markers = locations.map(function(location, i) {
-			var latlng = new google.maps.LatLng(location[1], location[2]);
+			var latlng = new google.maps.LatLng(location[0], location[1]);
 			bounds.extend(latlng);
 			var marker = new google.maps.Marker({
 				position: latlng
 			});
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.setContent('<div id="infowindow-content">' + location[0] + '</div>');
-				infowindow.open(map, marker);
+			
+			google.maps.event.addListener(marker, 'click', function() {				
+				elgg.get('ajax/view/checkin/infowindow', {
+					data: {
+						guid: location[2]
+					},
+					success: function (output) {
+						infowindow.setContent(output);
+						infowindow.open(map, marker);
+					}
+				});				
 			});
 			return marker;
         });
