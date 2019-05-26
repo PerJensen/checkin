@@ -37,20 +37,56 @@
 	height: 600px;
 	margin: 1rem 0;
 }
-#infowindow-content {
-	color: #2d3047;
-    background: #FFF;
-    font-size: 1rem;
-	padding: .5rem;
+/* Infowindow */
+.gm-style {   
+	font: 400 1rem "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	line-height: 1.5;
 }
-#infowindow-content .elgg-content {
-    margin: .5rem 0;
+.gm-style-iw .elgg-module-featured {
+	border: none;
+	margin-bottom: 0;	
+}
+.gm-style-iw .elgg-module-featured .elgg-head {
+	margin-top: -0.5rem;
+	padding: 1rem;
+}
+.gm-style-iw .elgg-module-featured h3 {
+	font-weight: normal;
+}
+.gm-style-iw .elgg-module-featured .elgg-head a {
+	color: #fff;
+}
+.gm-style .gm-style-iw .elgg-content {
+	font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+	margin-top: 0.5rem;
 }
 .gm-style .gm-style-iw-c {
     border-radius: 3px;
 	background-color: #FFF;
+	padding: 0;
 }
-/* end map */
+.gm-style img {
+    width: 100%;
+	line-height: 1;
+}
+.gm-style-iw-d {
+	overflow: visible !important;
+	max-width: none !important;
+}
+.gm-style .gm-style-iw button {
+    top: 8px !important;
+    right: 8px !important;
+    opacity: 0.4;
+    background: #fff !important;
+    border-radius: 50%;
+    z-index: 100000;
+}
+.gm-style .gm-style-iw button:hover {
+    opacity: 0.8;
+}
+/* end Infowindow */
 .checkin-location-field {
     flex-direction: row;	
 }

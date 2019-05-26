@@ -193,6 +193,13 @@ function checkin_custom_icon_sizes($hook, $type, $return, $params) {
 		'square' => false,
 		'upscale' => false,
 	];
+	
+	$return['checkin_cover_small'] = [
+		'w' => 384,
+		'h' => 216,
+		'square' => false,
+		'upscale' => false,
+	];
 
 	$return['medium'] = [
 		'w' => 480,
@@ -240,6 +247,10 @@ function checkin_set_icon_file($hook, $type, $icon, $params) {
 
 		case 'checkin_cover' :
 			$name = 'cover';
+			break;
+			
+		case 'checkin_cover_small' :
+			$name = 'cover_small';
 			break;
 
 		default :

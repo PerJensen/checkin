@@ -13,6 +13,11 @@ if (empty($vars['entity']) || !$vars['entity'] instanceof ElggObject) {
 $object = $vars['entity'];
 /* @var ElggObject $object */
 
+$image = elgg_view('output/img', [
+	'src' => $object->getIconURL('checkin_cover_small'),
+	'alt' => $object->getDisplayName(),
+]);
+	
 $title = elgg_view('output/url', [
     'text' => $object->getDisplayName(),
     'href' => $object->getUrl(),
@@ -32,10 +37,12 @@ if ($owner instanceof ElggEntity) {
 $location = $object->location;
 
 // format output
-$body = elgg_format_element('h3', [
-	'class' => [
-		'elgg-listing-summary-title',
-	]
+$cover = elgg_format_element('div', [
+	'class' => 'elgg-image'
+], $image);
+
+$header = elgg_format_element('h3', [
+	'class' => 'elgg-head'
 ], $title);
 
 $body .= elgg_format_element('div', [
@@ -45,12 +52,10 @@ $body .= elgg_format_element('div', [
 	]
 ], $owner_text);
 
-$body .= elgg_format_element('div', [
-	'class' => [
-		'elgg-listing-summary-content',
-		'elgg-content',
-	]
-], $location);
-
+$body .= elgg_format_element('div', ['class' => 'elgg-content'], $location);
 $content = elgg_format_element('div', ['class' => 'elgg-body'], $body);
-echo elgg_format_element('div', ['id' => 'infowindow-content', 'class' => 'elgg-image-block'], $content);
+
+$contents = $header . $content;
+
+echo $cover;
+echo elgg_format_element('div', ['class' => 'elgg-module elgg-module-featured'], $contents);
