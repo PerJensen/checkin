@@ -94,6 +94,7 @@ if ($new_checkin) {
 	}
 	
 	elgg_create_river_item([
+		'view' => 'river/object/checkin/create',
 		'action_type' => 'create',
 		'object_guid' => $checkin->guid,
 	]);
