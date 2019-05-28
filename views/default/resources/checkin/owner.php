@@ -27,13 +27,13 @@ $params = [];
 if ($owner->guid == elgg_get_logged_in_user_guid()) {
 	// user looking at own checkins
 	$params['filter_context'] = 'mine';
+	$title = elgg_echo("checkin:mine");
 } else if ($owner instanceof ElggUser) {
 	// someone else's checkins
 	// do not show select a tab when viewing someone else's posts
 	$params['filter_context'] = 'none';
+	$title = elgg_echo("collection:object:checkin:owner", [$owner->getDisplayName()]);
 }
-
-$title = elgg_echo("collection:object:checkin:owner", [$owner->getDisplayName()]);
 
 $listing_params = $vars;
 $listing_params['entity'] = $owner;

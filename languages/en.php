@@ -14,6 +14,7 @@ return array(
 	'edit:object:checkin' => "Edit check-in",
 	
 	'checkin:by' => "By ",
+	'checkin:mine' => "My check-ins",
 	'checkin:more' => "More check-ins",
 	'checkin:list' => "list view",
 	'checkin:map' => "Map of all check-ins",

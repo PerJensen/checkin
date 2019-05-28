@@ -14,6 +14,7 @@ return array(
 	'edit:object:checkin' => "Rediger tjek ind",
 	
 	'checkin:by' => "Af ",
+	'checkin:mine' => "Mine tjek ind",
 	'checkin:more' => "Se alle dine tjek ind",
 	'checkin:list' => "Liste",
 	'checkin:map' => "Kort med alle tjek ind",
