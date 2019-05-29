@@ -72,11 +72,6 @@ if ($uploaded_file && $uploaded_file->isValid()) {
 	if ($checkin->getSimpleType() === 'image') {
 		$checkin->saveIconFromElggFile($checkin);
 	}
-	
-	// remove legacy metadata
-	unset($checkin->thumbnail);
-	unset($checkin->smallthumb);
-	unset($checkin->largethumb);
 }
 
 // checkin saved so clear sticky form
