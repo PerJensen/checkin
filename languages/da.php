@@ -5,17 +5,17 @@ return array(
 	'item:object:checkin' => 'Tjek ind',
 	'collection:object:checkin' => 'Tjek ind',
 	'collection:object:checkin:all' => "Alle tjek ind",
-	'collection:object:checkin:owner' => "%s's tjek ind",
+	'collection:object:checkin:owner' => "%ss tjek ind",
 	'collection:object:checkin:friends' => "Venners tjek ind",
 	'collection:object:checkin:group' => "Gruppe tjek ind",
 	'collection:object:checkin:map' => "Kort med alle tjek ind",
 	
-	'add:object:checkin' => "Nyt tjek ind",
+	'add:object:checkin' => "Tilføj tjek ind",
 	'edit:object:checkin' => "Rediger tjek ind",
 	
 	'checkin:by' => "Af ",
 	'checkin:mine' => "Mine tjek ind",
-	'checkin:more' => "Se alle dine tjek ind",
+	'checkin:more' => "Se alle tjek ind",
 	'checkin:list' => "Liste",
 	'checkin:map' => "Kort med alle tjek ind",
 
@@ -65,7 +65,7 @@ Se og kommentér dette tjek ind:
 	 * Error messages
 	 */
 
-	'checkin:none' => "Ingen tjek ind endnu",
+	'checkin:none' => "Ingen tjek ind",
 	'checkin:uploadfailed' => "Dit tjek ind kunne ikke gemmes",
 	'checkin:noaccess' => "Du har ikke tilladelse til at ændre dette tjek ind",
 	'checkin:cannotload' => "Der opstod en fejl under tilføjelse af tjek ind",

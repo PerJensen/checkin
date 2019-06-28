@@ -47,7 +47,6 @@
 	margin-bottom: 0;	
 }
 .gm-style-iw .elgg-module-featured .elgg-head {
-	margin-top: -0.5rem;
 	padding: 1rem;
 }
 .gm-style-iw .elgg-module-featured h3 {
@@ -70,6 +69,7 @@
 .gm-style img {
     width: 100%;
 	line-height: 1;
+	display: block;
 }
 .gm-style-iw-d {
 	overflow: visible !important;
