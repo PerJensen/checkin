@@ -66,6 +66,10 @@
 	background-color: #FFF;
 	padding: 0;
 }
+.gm-style-iw-d .elgg-image {
+	max-height: 216px;
+	overflow: hidden;
+}
 .gm-style img {
     width: 100%;
 	line-height: 1;
