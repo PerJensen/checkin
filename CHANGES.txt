@@ -1,5 +1,13 @@
 = Version history =
 
+2019.08.04:
+
+- fix(title): correct page title when looking at own or someone else's check-ins
+- chore(views): adds icon to river item
+- chore(views): redesign infowindow - icon added
+- chore(views): adds ajax view to return infowindow content
+- feature(js): adds marker clustering to site map
+
 2019.05.19:
 
 - Initial release for Elgg 3.0
