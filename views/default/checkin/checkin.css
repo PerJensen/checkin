@@ -24,9 +24,15 @@
 .checkin-field span {
     padding: 0;
 }
+.checkin-field .elgg-avatar {
+    padding: 0 0 0 .5rem;
+}
 .checkin-field .elgg-output {
     padding: 0;
 	margin: 0;
+}
+.checkin-location-field div {
+    padding: 0 .25rem 0 0;
 }
 /* Map display */
 #map-canvas {
@@ -124,5 +130,8 @@
 	}
 	.pac-container .pac-item {
 		font-size: 14px;
+	}
+	.checkin-location-field {
+		flex-direction: column;
 	}
 }

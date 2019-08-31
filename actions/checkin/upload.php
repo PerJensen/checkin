@@ -8,6 +8,7 @@
 // Get variables
 $title = elgg_get_title_input();
 $location = get_input('location');
+$tagged = (array) get_input('collection_tagged', []);
 $latitude = get_input('latitude');
 $longitude = get_input('longitude');
 $desc = get_input('description');
@@ -50,6 +51,7 @@ if ($title) {
 }
 $checkin->description = $desc;
 $checkin->location = $location;
+$checkin->collection_tagged = $tagged;
 $checkin->latitude = $latitude;
 $checkin->longitude = $longitude;
 $checkin->access_id = $access_id;

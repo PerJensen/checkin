@@ -29,6 +29,8 @@ return array(
 	'checkin:description' => "Billedtekst",
 	'checkin:menu:item' => "Tjek ind",
 	'checkin:search:location' => "Find adresse",
+	'checkin:tagged' => "- sammen med",
+	'checkin:tag:users' => "Hven er du sammen med?",
 	
 	'checkin:notice:file' => "Anvend billeder i størrelsesforhold 16:9 (landskab) for det bedste resultat.",
 	'checkin:notice:file:title' => "Billedformat",

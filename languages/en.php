@@ -29,6 +29,8 @@ return array(
 	'checkin:description' => "Tags (comma separated list)",
 	'checkin:menu:item' => "Check In",
 	'checkin:search:location' => "Find address",
+	'checkin:tagged' => "- together with",
+	'checkin:tag:users' => "Who are you with?",
 
 	'checkin:notice:file' => "Use images in aspect ratio 16:9 (landscape) for best results.",
 	'checkin:notice:file:title' => "Image format",

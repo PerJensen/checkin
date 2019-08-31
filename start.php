@@ -299,6 +299,7 @@ function checkin_prepare_form_vars($checkin = null) {
 	$values = [
 		'title' => '',
 		'location' => '',
+		'collection_tagged' => '',
 		'latitude' => '',
 		'longitude' => '',
 		'description' => '',

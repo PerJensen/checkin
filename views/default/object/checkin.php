@@ -27,13 +27,27 @@ if ($full && !elgg_in_context('gallery')) {
 		'class' => 'checkin-field',
 	]);
 	
+	$tagged = $entity->collection_tagged;
+	$result = count($tagged);
+	if ($tagged) {
+		$with = elgg_echo('checkin:tagged');
+		if ($result == 1) {	
+			$icon = get_entity($tagged);
+			$members = elgg_view_entity_icon($icon, 'tiny');			
+		} else {
+			foreach ($tagged as $user) {
+				$icon = get_entity($user);
+				$members .= elgg_view_entity_icon($icon, 'tiny');
+			}
+		}
+	}
+	
 	$location_value = elgg_view('output/text', ['value' => $entity->location]);	
 	$icon = elgg_view_icon('map-marker');
 	$body .= elgg_view('object/elements/field', [
-		'icon' => 'map-marker',
-		'value' => $location_value,
+		'value' =>  '<div>' . $icon . $location_value . '</div>' . '<div>' . $with . $members . '</div>',
 		'class' => 'checkin-field checkin-location-field',		
-	]);	
+	]);
 	$body .= elgg_format_element('div', ['id' => 'map-canvas'], '');
 	
 	$latlng = array($entity->latitude, $entity->longitude);	

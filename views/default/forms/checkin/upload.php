@@ -10,6 +10,7 @@ elgg_require_js('checkin/google-places');
 // once elgg_view stops throwing all sorts of junk into $vars, we can use
 $title = elgg_extract('title', $vars, '');
 $location = elgg_extract('location', $vars, '');
+$tagged = elgg_extract('collection_tagged', $vars);
 $latitude = elgg_extract('latitude', $vars, '');
 $longitude = elgg_extract('longitude', $vars, '');
 $desc = elgg_extract('description', $vars, '');
@@ -58,6 +59,13 @@ $fields = [
 		'value' => $location,
 		'placeholder' => elgg_echo('checkin:search:location'),
 		'required' => true,
+	],
+	[
+		'#type' => 'userpicker',
+		'#label' => elgg_echo('checkin:tag:users'),
+		'name' => 'collection_tagged',
+		'values' => $tagged,
+		'show_friends' => false,
 	],
 	[
 		'#type' => 'hidden',
