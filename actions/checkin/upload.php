@@ -95,6 +95,33 @@ if ($new_checkin) {
 		'action_type' => 'create',
 		'object_guid' => $checkin->guid,
 	]);
+	
+	// notify tagged user
+	if ($tagged) {
+		
+		$trigger = elgg_get_logged_in_user_entity();
+	
+		foreach ($tagged as $user) {
+			$user = get_entity($user);
+			
+			// Subject of the notification
+			$subject = elgg_echo('checkin:tag:subject', array(), $user->language);
+			
+			// Body of the notification message
+			$body = elgg_echo('checkin:tag:body', array(
+				$checkin->title,
+				$trigger->getDisplayName(),
+				$checkin->getURL(),
+			), $user->language);
+			
+			$params = array(
+				'action' => 'create'
+			);
+			
+			// Send the notification
+			notify_user($user->guid, $trigger->guid, $subject, $body, $params);
+		}	
+	}
 }
 
 return elgg_ok_response('', elgg_echo('checkin:saved'), $forward);

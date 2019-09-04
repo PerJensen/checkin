@@ -55,6 +55,12 @@ return array(
 View and comment on the check-in:
 %s',
 
+	'checkin:tag:subject' => "You have been tagged in a check-in",
+	'checkin:tag:body' => "You have been tagged in check-in %s by %s.
+
+View the new check-in here:
+%s",
+
 	/**
 	 * Status messages
 	 */

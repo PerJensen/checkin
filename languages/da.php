@@ -30,7 +30,7 @@ return array(
 	'checkin:menu:item' => "Tjek ind",
 	'checkin:search:location' => "Find adresse",
 	'checkin:tagged' => "- sammen med",
-	'checkin:tag:users' => "Hven er du sammen med?",
+	'checkin:tag:users' => "Hvem er du sammen med?",
 	
 	'checkin:notice:file' => "Anvend billeder i størrelsesforhold 16:9 (landskab) for det bedste resultat.",
 	'checkin:notice:file:title' => "Billedformat",
@@ -54,6 +54,12 @@ return array(
 
 Se og kommentér dette tjek ind:
 %s',
+
+	'checkin:tag:subject' => "Du er blevet tagget i et tjek ind",
+	'checkin:tag:body' => "Du er blevet tagget i tjek ind %s af %s.
+
+Du kan se det nye tjek ind her:
+%s",
 
 	/**
 	 * Status messages
