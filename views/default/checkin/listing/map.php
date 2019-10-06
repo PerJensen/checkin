@@ -13,6 +13,7 @@ checkin_register_toggle();
 $results = elgg_get_entities([
 	'type' => 'object',
 	'subtype' => 'checkin',
+	'limit' => 0,
 	'no_results' => elgg_echo("checkin:none"),
 	'distinct' => false,
 ]);
